@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            margin: 0;
+            font-family: monospace;
+            color: #e6c7b3;
+        line-height: 1.6;
+        font-size: 18px;
+    }
+
+    .loading-text, .status-text {
+        font-size: 24px;
+    }
+
+    .progress-bar {
+        width: 400px;
+        height: 30px;
+    }
+
+    .progress {
+        height: 100%;
+    }
+
+        .loader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 0.5s;
+        }
+
+        .loader-content {
+            text-align: center;
+        }
+
+        .progress-bar {
+            width: 300px;
+            height: 20px;
+            border: 2px solid #e6c7b3;
+            padding: 2px;
+        }
+
+        .progress {
+            width: 0%;
+            height: 100%;
+            background-color: #e6c7b3;
+            animation: loading 1s linear forwards;
+        }
+
+        .main-content {
+            padding: 2rem;
+            display: none;
+        }
+
+        .header {
+            background-color: #2a2a2a;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: #2a2a2a;
+            padding: 1.5rem;
+            border-radius: 4px;
+        }
+
+        @keyframes loading {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        @media (max-width: 768px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader-container" id="loader">
+        <div class="loader-content">
+            <div class="loading-text">Booting...</div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <div class="status-text">Nearly There...</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="main">
+        <div class="header">
+            <h1>Hi there</h1>
+        </div>
+
+        <div class="section" id="about">
+            <h2>About Me</h2>
+            <p>Hi, I'm Dylan Maraist, a passionate and driven cybersecurity enthusiast with a solid foundation in electronics, IT support, and networking. Currently enrolled in the UT Cybersecurity Bootcamp, I am sharpening my skills in areas like threat analysis, network security, and system administration. I've completed the Google Cybersecurity Professional Certification, where I gained hands-on experience with tools like Python, Linux, and SQL, and learned to protect networks, devices, and data from cyber threats.</p>
+            <p>My journey into cybersecurity has been fueled by my curiosity and problem-solving nature, honed through practical experiences like configuring POS systems, managing IT equipment, and creating automated backup scripts. Whether it's unraveling challenges in Hack The Box or diving into group policies with Microsoft Azure, I thrive on continuous learning and applying my skills to real-world scenarios.</p>
+            <p>I aim to educate and inspire others about cybersecurity concepts through my content creation on platforms like YouTube and Twitch, where I blend gaming with technical learning. I'm excited to contribute to meaningful projects, stay ahead of emerging threats, and make a tangible impact in the world of cybersecurity.</p>
+            <p>Let’s connect and work together to build secure and innovative solutions!</p>
+        </div>
+
+        <div class="section" id="projects">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Project 1</h3>
+                    <p>Project description coming soon...</p>
+                </div>
+                <div class="project-card">
+                    <h3>Project 2</h3>
+                    <p>Project description coming soon...</p>
+                </div>
+                <div class="project-card">
+                    <h3>Project 3</h3>
+                    <p>Project description coming soon...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            document.getElementById('loader').style.opacity = '0';
+            document.getElementById('main').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('loader').style.display = 'none';
+            }, 500);
+        }, 1000);
+    </script>
+</body>
+</html>
